@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Tasks | To-Do List</title>
+<meta name="description" content="A simple to-do list that remembers your tasks in the browser using localStorage.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<main class="card">
+  <header>
+    <p class="date" id="date"></p>
+    <h1>My tasks</h1>
+  </header>
+
+  <form id="form" novalidate>
+    <label class="sr" for="text">New task</label>
+    <input id="text" type="text" placeholder="What needs doing?" maxlength="120" autocomplete="off">
+    <button type="submit" class="add">Add</button>
+  </form>
+  <p class="error" id="error" role="alert" hidden></p>
+
+  <div class="filters" id="filters" role="group" aria-label="Filter tasks">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="active" aria-pressed="false">Active</button>
+    <button type="button" data-filter="done" aria-pressed="false">Done</button>
+  </div>
+
+  <ul id="list"></ul>
+  <p class="empty" id="empty" hidden></p>
+
+  <footer>
+    <p id="count" aria-live="polite"></p>
+    <button type="button" id="clear" class="ghost">Clear completed</button>
+  </footer>
+</main>
+</body>
+</html>
